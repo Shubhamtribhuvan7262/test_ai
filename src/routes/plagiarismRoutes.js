@@ -21,6 +21,13 @@ router.post(
   plagiarismController.plagariseApi
 );
 
+router.post(
+  "/gemini-plagiarism",
+  upload.single("file"),
+  uploadFileIO,
+  plagiarismController.geminiPlagiarise
+);
+
 router.post("/send-email", plagiarismController.sendEmailApi);
 
 module.exports = router;
